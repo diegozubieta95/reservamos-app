@@ -1,0 +1,32 @@
+<div
+  class='h-2/5 w-full p-4 overflow-hidden overflow-x-scroll md:overflow-visible'
+>
+  <div class='grid grid-rows-1 grid-flow-col gap-4'>
+    {{#each @weather as |weatherDay|}}
+      <div>
+        <div id='day' class='text-xs md:text-sm'>
+          Monday
+        </div>
+        <div id='icon'>
+          <img
+            src={{concat
+              '/images/'
+              (get weatherDay.weather.firstObject 'main')
+              '.png'
+            }}
+            class='w-1/5'
+          />
+        </div>
+        <div id='temperature-short' class='text-md md:text-lg'>
+          {{weatherDay.temp.day}}
+        </div>
+        <div id='temperature-max-min' class='text-xxs'>
+          Min:
+          {{weatherDay.temp.min}}
+          | Max:
+          {{weatherDay.temp.max}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

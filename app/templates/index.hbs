@@ -1,0 +1,26 @@
+<div class='w-full'>
+  <div class='dark:bg-slate-800'>
+    <div class='mx-8'>
+      <div class='w-full text-center pt-8'>
+        <h1 class='text-5xl text-white'>Weather App</h1>
+      </div>
+      <div class='w-full text-center pt-4 text-white'>
+        Enter name of a city to compare weather throughout the week
+      </div>
+      <label class='block py-8'>
+        <span class='block text-sm font-medium text-white'>Search City</span>
+        <input
+          type='text'
+          value=''
+          onkeyup={{perform this.executeSearchEndpoint}}
+          class='mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500'
+        />
+      </label>
+    </div>
+  </div>
+  <div class='container'>
+    {{#each this.cities as |city|}}
+      <Weather @city={{city}} class='pb-4' />
+    {{/each}}
+  </div>
+</div>

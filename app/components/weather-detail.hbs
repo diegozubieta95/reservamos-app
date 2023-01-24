@@ -1,0 +1,35 @@
+<div id='content' class='w-full flex pt-2'>
+  <div id='left-side' class='w-1/2'>
+    <div id='weather' class='flex'>
+      <div id='weather-main'>
+        {{get @weather.weather.firstObject 'main'}}
+        |
+      </div>
+      <div id='weahter-description' class='self-center pl-2'>
+        {{get @weather.weather.firstObject 'description'}}
+      </div>
+    </div>
+    <div id='feels' class='text-xs'>
+      {{@weather.feel_like}}
+    </div>
+    <div id='temperature' class='text-5xl'>
+      {{@weather.temp}}
+    </div>
+    <div id='temperature-max-min' class='text-sm'>
+      Min:
+      {{@today.temp.min}}
+      | Max:
+      {{@today.temp.max}}
+    </div>
+  </div>
+  <div id='right-side' class='w-1/2' style='text-align: -webkit-center;'>
+    <img
+      src={{concat '/images/' (get @weather.weather.firstObject 'main') '.png'}}
+      class='w-1/5'
+    />
+    {{log
+      (concat '/images/' (get @weather.weather.firstObject 'main') '.png')
+      'TEST'
+    }}
+  </div>
+</div>

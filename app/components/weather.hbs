@@ -1,0 +1,18 @@
+<div class='my-4 bg-slate-100 rounded-xl p-8 md:p-0 block m-3 border border-slate-800'>
+  <div class='h-3/5 w-full px-4 pt-4 pb-0'>
+    <div id='header' class='pb-2 border-b-[1px]'>
+      <div id='city'>
+        {{@city.display}},
+        {{@city.state}}
+      </div>
+      <div id='country' class='text-xs'>
+        {{@city.country}}
+      </div>
+    </div>
+    <WeatherDetail
+      @weather={{this.weather.current}}
+      @today={{this.weather.daily.firstObject}}
+    />
+  </div>
+  <WeatherCalendar @weather={{this.weather.daily}} />
+</div>
