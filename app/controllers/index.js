@@ -16,49 +16,5 @@ export default class IndexController extends Controller {
       .then((response) => {
         this.cities = response;
       });
-    // let city = fetch(`https://search.reservamos.mx/api/v2/places?q=${val}`);
-    // console.log(city);
-    // let event = [...arguments].lastObject;
-    // let beforeWork = this.args.beforeWork;
-    // let work = this.args.work;
-    // let afterWork = this.args.afterWork;
-    // let askToConfirm = this.args.askToConfirm;
-    // let confirmPrompt = this.args.confirmPrompt;
-    // let onError = this.args.onError;
-
-    // let result;
-
-    // //confirm before excecuting any action
-    // if (askToConfirm) {
-    //   assert(
-    //     '@string confirmPrompt needs to be provided',
-    //     confirmPrompt !== null
-    //   );
-
-    //   if (!confirm(confirmPrompt)) {
-    //     event.stopPropagation();
-    //     return;
-    //   }
-    // }
-
-    // try {
-    //   //run a validation action, return FALSE to cancel task
-    //   let shouldCancel = yield beforeWork?.(...arguments) === false;
-
-    //   if (shouldCancel) {
-    //     return;
-    //   }
-
-    //   //main action to run
-    //   result = yield work?.(...arguments);
-
-    //   //an action to excecute after work
-    //   yield afterWork?.(...arguments);
-
-    //   return result;
-    // } catch (e) {
-    //   console.error(e);
-    //   onError?.(e);
-    // }
   }
 }

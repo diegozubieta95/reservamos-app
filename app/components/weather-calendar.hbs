@@ -2,7 +2,7 @@
   class='h-2/5 w-full p-4 overflow-hidden overflow-x-scroll md:overflow-visible'
 >
   <div class='grid grid-rows-1 grid-flow-col gap-4'>
-    {{#each @weather as |weatherDay|}}
+    {{#each @weather as |weatherDay index|}}
       <div>
         <div id='day' class='text-xs md:text-sm'>
           Monday
@@ -17,7 +17,14 @@
             class='w-1/5'
           />
         </div>
-        <div id='temperature-short' class='text-md md:text-lg'>
+
+        <div
+          id='temperature-short'
+          class={{concat
+            'text-md md:text-lg '
+            (if (eq this.max index) 'text-orange-900')
+          }}
+        >
           {{weatherDay.temp.day}}
         </div>
         <div id='temperature-max-min' class='text-xxs'>
